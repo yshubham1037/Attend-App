@@ -125,8 +125,32 @@ padding-bottom: 10px;
 
 
 
-<!-- Adding Modal functionality  -->
+
     <script type="text/javascript">
+	var attempt = 5; // Variable to count number of attempts.
+console.log(username);
+console.log(password);
+
+function validate(){
+  var username=document.getElementById('username');
+  var password=document.getElementById('password');
+  if(username.value = "abcd@gmail.com" && password.value = "abc123"){
+    sessionStorage.setItem("k","true");
+    location.href="./page.html"
+    return false;
+  } else {
+    attempt --;
+    alert("you have "+attempt+" attempts left");
+  }  if( attempt == 0){
+        document.getElementById("username").disabled = true;
+        document.getElementById("password").disabled = true;
+        document.getElementById("submit").disabled = true;
+        return false;
+  }
+}
+
+	    <!-- Adding Modal functionality  -->
+		    
     var username=document.getElementById('username');
     var password=document.getElementById('password');
     console.log(username);
