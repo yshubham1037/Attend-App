@@ -127,27 +127,7 @@ padding-bottom: 10px;
 
 
     <script type="text/javascript">
-	var attempt = 5; // Variable to count number of attempts.
-console.log(username);
-console.log(password);
-
-function validate(){
-  var username=document.getElementById('username');
-  var password=document.getElementById('password');
-  if(username.value = "abcd@gmail.com" && password.value = "abc123"){
-    sessionStorage.setItem("k","true");
-    location.href="./page.html"
-    return false;
-  } else {
-    attempt --;
-    alert("you have "+attempt+" attempts left");
-  }  if( attempt == 0){
-        document.getElementById("username").disabled = true;
-        document.getElementById("password").disabled = true;
-        document.getElementById("submit").disabled = true;
-        return false;
-  }
-}
+	
 
 	    <!-- Adding Modal functionality  -->
 		    
@@ -156,38 +136,22 @@ function validate(){
     console.log(username);
     console.log(password);
     document.getElementById('button').addEventListener('click', function(){
-       if(document.getElementById('password').value.length>=4&& document.getElementById('username').value.match(/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/))
-      {
-       console.log(username);
-        console.log(password);
-        document.querySelector('.bg-modal').style.display = 'block';
-        document.getElementById('alert').innerText="welcome "+username.value;
-      }
+	    if (username.value=="abcd@gmail.com" && password.value =="abcd123") {
+        sessionStorage.setItem("k","true");
+        location.href="./page.html";
+       }
       else{
         console.log(username);
           console.log(password);
           document.querySelector('.bg-modal').style.display = 'block';
           document.getElementById('alert').innerText="Something is incorrect. Please try again.";
       } 
-      // <!--else if(document.getElementById('password').value.length<4)
-      // {
-      //  console.log(username);
-      //   console.log(password);
-      //   document.querySelector('.bg-modal').style.display = 'block';
-      //   document.getElementById('alert').innerText="password length should be more";
-//       }
-// else {console.log(username);
-//         console.log(password);
-//         document.querySelector('.bg-modal').style.display = 'block';
-//         document.getElementById('alert').innerText="enter username and password";
-          
-//         }
+      
     });
     document.querySelector('.close').addEventListener('click',
         function(){
             document.querySelector('.bg-modal').style.display = 'none';
         });
-    </script>
+    </script>       
  </body>
-
  </html>
